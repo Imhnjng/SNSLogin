@@ -13,6 +13,7 @@
 		3CF43D6E2C73716E0057A3E8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43D6D2C73716E0057A3E8 /* Base */; };
 		3CF43D702C7371700057A3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43D6F2C7371700057A3E8 /* Assets.xcassets */; };
 		3CF43D732C7371700057A3E8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43D722C7371700057A3E8 /* Base */; };
+		3CF43D842C73898E0057A3E8 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF43D832C73898E0057A3E8 /* KakaoSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF43D842C73898E0057A3E8 /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = SNSLogin;
+			packageProductDependencies = (
+				3CF43D832C73898E0057A3E8 /* KakaoSDK */,
+			);
 			productName = SNSLogin;
 			productReference = 3CF43D632C73716E0057A3E8 /* SNSLogin.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 3CF43D5A2C73716E0057A3E8;
+			packageReferences = (
+				3CF43D822C73898E0057A3E8 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = 3CF43D642C73716E0057A3E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3CF43D822C73898E0057A3E8 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3CF43D832C73898E0057A3E8 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CF43D822C73898E0057A3E8 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CF43D5B2C73716E0057A3E8 /* Project object */;
 }
