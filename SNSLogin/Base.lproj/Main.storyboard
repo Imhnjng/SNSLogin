@@ -30,9 +30,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoD-me-yzt">
-                                <rect key="frame" x="161" y="464" width="73" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcH-oP-WEy">
+                                <rect key="frame" x="92" y="476" width="209" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="google_light_sq_SI"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoD-me-yzt">
+                                <rect key="frame" x="160" y="763" width="73" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="logout"/>
                                 <connections>
@@ -44,9 +48,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PuY-8a-F5p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="338" id="1YQ-qU-v20"/>
+                            <constraint firstItem="QcH-oP-WEy" firstAttribute="top" secondItem="PuY-8a-F5p" secondAttribute="bottom" constant="20" id="4b6-M0-LFH"/>
                             <constraint firstItem="W3w-US-O7Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6jw-1x-quX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PuY-8a-F5p" secondAttribute="trailing" constant="92" id="HI5-fe-g9b"/>
+                            <constraint firstItem="JoD-me-yzt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LlH-R7-a2b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JoD-me-yzt" secondAttribute="bottom" constant="20" id="Rxd-4E-TKt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PuY-8a-F5p" secondAttribute="bottom" constant="362" id="k4e-2i-BiU"/>
+                            <constraint firstItem="QcH-oP-WEy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kDB-1v-mCV"/>
                             <constraint firstItem="PuY-8a-F5p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="kgk-Gp-5rE"/>
                             <constraint firstItem="PuY-8a-F5p" firstAttribute="top" secondItem="W3w-US-O7Z" secondAttribute="bottom" constant="150" id="l8X-HU-EdA"/>
                         </constraints>
@@ -61,6 +69,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="google_light_sq_SI" width="185" height="44"/>
         <image name="kakao_login_medium_narrow" width="183" height="45"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
