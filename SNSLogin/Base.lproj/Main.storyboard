@@ -34,6 +34,9 @@
                                 <rect key="frame" x="92" y="476" width="209" height="58"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="google_light_sq_SI"/>
+                                <connections>
+                                    <action selector="googleLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zbq-ll-tdj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoD-me-yzt">
                                 <rect key="frame" x="160" y="763" width="73" height="35"/>

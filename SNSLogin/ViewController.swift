@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKUser
 import KakaoSDKAuth
 import KakaoSDKCommon
+import GoogleSignIn
 
 class ViewController: UIViewController {
     
@@ -62,5 +63,17 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func googleLoginButton(_ sender: Any) {
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("구글 로그인 성공")
+            }
+        }
+    }
+    
 }
 
