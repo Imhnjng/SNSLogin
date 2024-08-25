@@ -11,9 +11,16 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 import GoogleSignIn
 
+enum Logintype {
+    case none
+    case kakaotalk
+    case google
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var nicknameLabel: UILabel!
+    var currentLoginType: Logintype = .none
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,19 +55,28 @@ class ViewController: UIViewController {
                     _ = oauthToken
                     //                    self.nicknameLabel.text = "로그인 완료"
                     self.setUserNickname()
+                    self.currentLoginType = .kakaotalk
                 }
             }
         }
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-        UserApi.shared.logout { (error) in
-            if let error = error {
-                print(error)
-            } else {
-                print("kakao logout success")
-                self.nicknameLabel.text = "Nickname"
+        switch currentLoginType {
+        case .none:
+            print("로그인을 하지 않았습니다")
+        case .kakaotalk:
+            UserApi.shared.logout { (error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("kakao logout success")
+                    self.handleLogoutSuccess()
+                }
             }
+        case .google:
+            GIDSignIn.sharedInstance.signOut()
+            self.handleLogoutSuccess()
         }
     }
     
@@ -71,8 +87,16 @@ class ViewController: UIViewController {
             }
             else {
                 print("구글 로그인 성공")
+                self.nicknameLabel.text = "구글 로그인"
+                self.currentLoginType = .google
             }
         }
+    }
+    
+    func handleLogoutSuccess() {
+        print("Logout success")
+        self.nicknameLabel.text = "Nickname"
+        currentLoginType = .none  // 로그인 상태 초기화
     }
     
 }
