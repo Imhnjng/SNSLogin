@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CBE01732C788730006027CB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBE01722C788730006027CB /* GoogleSignIn */; };
+		3CBE01762C7B0503006027CB /* NaverThirdPartyLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 3CBE01752C7B0503006027CB /* NaverThirdPartyLogin */; };
 		3CF43D672C73716E0057A3E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43D662C73716E0057A3E8 /* AppDelegate.swift */; };
 		3CF43D692C73716E0057A3E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43D682C73716E0057A3E8 /* SceneDelegate.swift */; };
 		3CF43D6B2C73716E0057A3E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43D6A2C73716E0057A3E8 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CF43D842C73898E0057A3E8 /* KakaoSDK in Frameworks */,
+				3CBE01762C7B0503006027CB /* NaverThirdPartyLogin in Frameworks */,
 				3CBE01732C788730006027CB /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +92,7 @@
 			packageProductDependencies = (
 				3CF43D832C73898E0057A3E8 /* KakaoSDK */,
 				3CBE01722C788730006027CB /* GoogleSignIn */,
+				3CBE01752C7B0503006027CB /* NaverThirdPartyLogin */,
 			);
 			productName = SNSLogin;
 			productReference = 3CF43D632C73716E0057A3E8 /* SNSLogin.app */;
@@ -122,6 +125,7 @@
 			packageReferences = (
 				3CF43D822C73898E0057A3E8 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				3CBE01712C788730006027CB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				3CBE01742C7B0503006027CB /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios" */,
 			);
 			productRefGroup = 3CF43D642C73716E0057A3E8 /* Products */;
 			projectDirPath = "";
@@ -385,6 +389,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		3CBE01742C7B0503006027CB /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/naver/naveridlogin-sdk-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		3CF43D822C73898E0057A3E8 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -400,6 +412,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3CBE01712C788730006027CB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		3CBE01752C7B0503006027CB /* NaverThirdPartyLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CBE01742C7B0503006027CB /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios" */;
+			productName = NaverThirdPartyLogin;
 		};
 		3CF43D832C73898E0057A3E8 /* KakaoSDK */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,6 +10,7 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 import KakaoSDKUser
 import GoogleSignIn
+import NaverThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 카카오 로그인 셋팅
         KakaoSDK.initSDK(appKey: "dbe82ca8e4341736f7310a50617b414a")
 //        GIDSignIn.sharedInstance.clientID = "485271827723-2nim5arjg4c058v0irutkgnnav2j7kpn.apps.googleusercontent.com"
+        
+        // 네이버 로그인 셋팅
+        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+        //네이버 앱으로 인증하는 방식 활성화
+        instance?.isNaverAppOauthEnable = true
+        //SafariViewController에서 인증하는 방식 활성화
+        instance?.isInAppOauthEnable = true
+        //인증 화면을 아이폰의 세로모드에서만 적용
+        instance?.isOnlyPortraitSupportedInIphone()
+        
+        instance?.serviceUrlScheme = kServiceAppUrlScheme
+        instance?.consumerKey = kConsumerKey
+        instance?.consumerSecret = kConsumerSecret
+        instance?.appName = kServiceAppName
+        
+        
         return true
     }
     
@@ -47,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if GIDSignIn.sharedInstance.handle(url) {
             return true
         }
+        
+        NaverThirdPartyLoginConnection.getSharedInstance().application(app, open: url, options: options)
         
         return false
     }
