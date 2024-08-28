@@ -46,6 +46,14 @@
                                     <action selector="logoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1PY-Pf-pBi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s98-WJ-Dev">
+                                <rect key="frame" x="94" y="561" width="205" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="VwT-BG-dwD"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="btnG_축약형"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,6 +64,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PuY-8a-F5p" secondAttribute="trailing" constant="92" id="HI5-fe-g9b"/>
                             <constraint firstItem="JoD-me-yzt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LlH-R7-a2b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JoD-me-yzt" secondAttribute="bottom" constant="20" id="Rxd-4E-TKt"/>
+                            <constraint firstItem="s98-WJ-Dev" firstAttribute="leading" secondItem="PuY-8a-F5p" secondAttribute="leading" id="Tn5-yi-IQE"/>
+                            <constraint firstItem="s98-WJ-Dev" firstAttribute="top" secondItem="QcH-oP-WEy" secondAttribute="bottom" constant="27" id="U8h-6H-Y3n"/>
+                            <constraint firstItem="s98-WJ-Dev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eeO-y2-XFd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PuY-8a-F5p" secondAttribute="bottom" constant="362" id="k4e-2i-BiU"/>
                             <constraint firstItem="QcH-oP-WEy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kDB-1v-mCV"/>
                             <constraint firstItem="PuY-8a-F5p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="kgk-Gp-5rE"/>
@@ -68,10 +79,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="-34"/>
+            <point key="canvasLocation" x="119.84732824427481" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btnG_축약형" width="550" height="200"/>
         <image name="google_light_sq_SI" width="185" height="44"/>
         <image name="kakao_login_medium_narrow" width="183" height="45"/>
         <systemColor name="systemBackgroundColor">
