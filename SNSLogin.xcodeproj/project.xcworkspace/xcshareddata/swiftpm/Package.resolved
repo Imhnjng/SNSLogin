@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/naver/naveridlogin-sdk-ios",
       "state" : {
-        "branch" : "master",
-        "revision" : "d8d2128b8bcef8cd93068a058ea898d6dbb7d486"
+        "revision" : "d8d2128b8bcef8cd93068a058ea898d6dbb7d486",
+        "version" : "4.2.2"
       }
     },
     {

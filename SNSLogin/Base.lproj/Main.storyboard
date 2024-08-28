@@ -53,6 +53,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="btnG_축약형"/>
+                                <connections>
+                                    <action selector="naverLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rma-Hy-7iW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

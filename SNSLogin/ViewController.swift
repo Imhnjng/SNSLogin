@@ -10,23 +10,28 @@ import KakaoSDKUser
 import KakaoSDKAuth
 import KakaoSDKCommon
 import GoogleSignIn
+import NaverThirdPartyLogin
 
 enum Logintype {
     case none
     case kakaotalk
     case google
+    case naver
 }
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var nicknameLabel: UILabel!
     var currentLoginType: Logintype = .none
+    
+    let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
         nicknameLabel.textColor = .black
+        naverLoginInstance?.delegate = self
     }
     
     func setUserNickname() {
@@ -77,6 +82,10 @@ class ViewController: UIViewController {
         case .google:
             GIDSignIn.sharedInstance.signOut()
             self.handleLogoutSuccess()
+            
+        case .naver:
+            print("네이버 로그아웃")
+            self.handleLogoutSuccess()
         }
     }
     
@@ -93,11 +102,40 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func naverLoginButton(_ sender: Any) {
+        naverLoginInstance?.requestThirdPartyLogin()
+        self.nicknameLabel.text = "네이버 로그인 성공"
+        self.currentLoginType = .naver
+    }
+    
     func handleLogoutSuccess() {
         print("Logout success")
         self.nicknameLabel.text = "Nickname"
         currentLoginType = .none  // 로그인 상태 초기화
     }
     
+}
+
+extension ViewController: NaverThirdPartyLoginConnectionDelegate {
+    // 로그인 성공
+    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        print("네이버 로그인 성공")
+        self.nicknameLabel.text = "네이버 로그인 성공"
+    }
+    
+    //refresh token
+    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+        naverLoginInstance?.accessToken
+    }
+    
+    // 로그아웃
+    func oauth20ConnectionDidFinishDeleteToken() {
+        print("네이버 로그아웃")
+    }
+    
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: (any Error)!) {
+        self.naverLoginInstance?.requestDeleteToken()
+        print("error \(error.localizedDescription)")
+    }
 }
 
